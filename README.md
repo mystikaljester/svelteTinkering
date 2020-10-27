@@ -5,6 +5,7 @@ Jason Holtzen got bored.
 ## Run the project
 
 ```node
+npm i
 npm run dev
 ```
 
