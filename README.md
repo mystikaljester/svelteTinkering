@@ -11,4 +11,4 @@ npm run dev
 
 ## Known issues
 
-I'm getting a promise error, probably due to me not using props and passing things around like the pros. It's not affecting functionality, but still throws in the console.
+`<Card> was created with unknown prop 'images'` pops up because I was playing with the spread operator and the API returns the image in 3 different ways (only 1 of which was used).

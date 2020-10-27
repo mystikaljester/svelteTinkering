@@ -2,7 +2,7 @@
   import Card from "./Card.svelte";
 
   let deck;
-  let cards;
+  let cards = [];
   let deckPromise = getDeck();
   let cardsPromise = getCards();
 
@@ -28,7 +28,6 @@
       );
 
       const text = await res.text();
-      console.log(text);
       cards = JSON.parse(text).cards;
 
       if (res.ok) {
@@ -67,22 +66,24 @@
     <p>Getting a deck...</p>
   {:then deck}
     <p>Deck Id is {deck}</p>
-    {#if deck}
-      <div>
-        <button on:click={handleClick}> Pull 3 cards </button>
-        {#await cardsPromise then cards}
-          <ul>
-            {#each cards as card (card.code)}
-              <Card {...card} />
-            {/each}
-            <li />
-          </ul>
-        {:catch error}
-          <p>API is borken...{error.message}</p>
-        {/await}
-      </div>
-    {/if}
   {:catch error}
     <p>API is borken...{error.message}</p>
   {/await}
 </div>
+
+{#if deck}
+  <div>
+    <button on:click={handleClick}> Pull 3 cards </button>
+    {#await cardsPromise then cards}
+      {#if cards}
+        <ul>
+          {#each cards as card (card.code)}
+            <Card {...card} />
+          {/each}
+        </ul>
+      {/if}
+    {:catch error}
+      <p>API is borken...{error.message}</p>
+    {/await}
+  </div>
+{/if}

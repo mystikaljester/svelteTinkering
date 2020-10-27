@@ -1,6 +1,8 @@
 <script>
-  import Button from "./Button.svelte";
+  // import Button from "./Button.svelte";
   import ThreeCards from "./ThreeCards.svelte";
+
+  export let name;
 </script>
 
 <style type="text/scss">
@@ -46,7 +48,7 @@
     rel="stylesheet" />
 </svelte:head>
 
-<main>
+<main id={name}>
   <h1>
     Playing around with
     <a href="https://svelte.dev/">Svelte</a>
