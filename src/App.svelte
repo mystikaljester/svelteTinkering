@@ -1,8 +1,14 @@
 <script>
   // import Button from "./Button.svelte";
   import ThreeCards from "./ThreeCards.svelte";
+  import List from "./list_things/List.svelte";
+  import DisplayWindow from "./list_things/DisplayWindow.svelte";
 
   export let name;
+
+  function handleMessage(event) {
+    alert(event.detail.text);
+  }
 </script>
 
 <style type="text/scss">
@@ -21,15 +27,15 @@
     font-family: "Fredoka One", sans-serif;
   }
 
-  a {
-    display: inline;
-    color: #b0b;
-    text-decoration: underline;
+  // a {
+  //   display: inline;
+  //   color: #b0b;
+  //   text-decoration: underline;
 
-    &:hover {
-      text-decoration: none;
-    }
-  }
+  //   &:hover {
+  //     text-decoration: none;
+  //   }
+  // }
 
   @media (min-width: 640px) {
     main {
@@ -49,11 +55,17 @@
 </svelte:head>
 
 <main id={name}>
-  <h1>
+  <!-- <h1>
     Playing around with
     <a href="https://svelte.dev/">Svelte</a>
     and the
     <a href="https://deckofcardsapi.com">DeckOfCardsAPI</a>.
   </h1>
-  <ThreeCards />
+  <ThreeCards /> -->
+
+  <h1>
+    <a href="http://www.google.com">Nothing here</a>
+  </h1>
+  
+  <List />
 </main>
