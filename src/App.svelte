@@ -1,6 +1,7 @@
 <script>
   // import Button from "./Button.svelte";
-  import ThreeCards from "./ThreeCards.svelte";
+  // import ThreeCards from "./ThreeCards.svelte";
+  import SpellList from "./SpellList.svelte";
 
   export let name;
 </script>
@@ -49,11 +50,6 @@
 </svelte:head>
 
 <main id={name}>
-  <h1>
-    Playing around with
-    <a href="https://svelte.dev/">Svelte</a>
-    and the
-    <a href="https://deckofcardsapi.com">DeckOfCardsAPI</a>.
-  </h1>
-  <ThreeCards />
+  <h1>CharacterFire</h1>
+  <SpellList />
 </main>
