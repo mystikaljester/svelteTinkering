@@ -13,10 +13,14 @@
 
 <style type="text/scss">
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+    justify-content: start;
     margin: 0 auto;
+    padding: 1em;
+    max-height: 90%;
   }
 
   h1 {
@@ -25,26 +29,8 @@
     font-size: 2em;
     font-weight: 400;
     font-family: "Fredoka One", sans-serif;
-  }
-
-  // a {
-  //   display: inline;
-  //   color: #b0b;
-  //   text-decoration: underline;
-
-  //   &:hover {
-  //     text-decoration: none;
-  //   }
-  // }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-
-  * {
-    display: block;
+    flex: 0 0 100%;
+    text-align: center;
   }
 </style>
 
@@ -63,9 +49,7 @@
   </h1>
   <ThreeCards /> -->
 
-  <h1>
-    <a href="http://www.google.com">Nothing here</a>
-  </h1>
-  
+  <h1><a href="http://www.google.com">Nothing here</a></h1>
+
   <List />
 </main>
